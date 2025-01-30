@@ -5,17 +5,10 @@ interface MessageFoundProps {
   isSearched: boolean;
 }
 
-export const MessageFound: React.FC<MessageFoundProps> = ({
-  foundCharacter,
-  isSearched,
-}) => {
+export const MessageFound: React.FC<MessageFoundProps> = ({ foundCharacter, isSearched }) => {
   return (
     <div className="flex justify-center">
-      {isSearched === false && !foundCharacter && (
-        <h2 className="text-2xl text-center text-gray-500">
-          Busca tu personaje.
-        </h2>
-      )}
+      {isSearched === false && !foundCharacter && <h2 className="text-2xl text-center text-gray-500">Busca tu personaje.</h2>}
 
       {foundCharacter && (
         <h2 className="text-2xl text-center font-semibold text-terciary">
@@ -24,9 +17,7 @@ export const MessageFound: React.FC<MessageFoundProps> = ({
       )}
 
       {isSearched === true && !foundCharacter && (
-        <h2 className="text-2xl text-center text-red-500 font-semibold">
-          No se encontró ningún personaje con esos parámetros.
-        </h2>
+        <h2 className="text-2xl text-center text-red-500 font-semibold">No se encontró ningún personaje con esos parámetros.</h2>
       )}
     </div>
   );

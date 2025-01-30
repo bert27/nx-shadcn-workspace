@@ -42,15 +42,11 @@ export function useFetch<TData, TBody = undefined>(
         const response = await fetch(url, {
           method: finalOptions?.method || 'GET',
           headers: finalOptions?.headers,
-          body: finalOptions?.body
-            ? JSON.stringify(finalOptions.body)
-            : undefined,
+          body: finalOptions?.body ? JSON.stringify(finalOptions.body) : undefined,
         });
 
         if (!response.ok) {
-          const errorMessage = `${
-            finalOptions.customErrorMessage || 'Error fetching data'
-          }: ${response.statusText}`;
+          const errorMessage = `${finalOptions.customErrorMessage || 'Error fetching data'}: ${response.statusText}`;
           setError(errorMessage);
           return;
         }
@@ -59,8 +55,7 @@ export function useFetch<TData, TBody = undefined>(
         setCache(url, result);
         setData(result);
       } catch (err) {
-        const customErrorMessage =
-          options?.customErrorMessage || 'Error desconocido';
+        const customErrorMessage = options?.customErrorMessage || 'Error desconocido';
         const errorMessage = `${customErrorMessage}: ${(err as Error).message}`;
         setError(errorMessage);
       } finally {

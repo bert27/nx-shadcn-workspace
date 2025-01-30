@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@org/shared": ["libs/shared/src/index.ts"]
+      "@shared": ["libs/shared/src/index.ts"],
+      "@appSecondary": ["apps/appSecondary/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

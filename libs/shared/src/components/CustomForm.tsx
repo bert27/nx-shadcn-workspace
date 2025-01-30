@@ -30,10 +30,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({ onSubmit }) => {
   });
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-md mx-auto p-6 background-secondary rounded-lg shadow-lg"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md mx-auto p-6 background-secondary rounded-lg shadow-lg">
       <RadioGroup
         label="¿Es masculino o femenino?"
         name="gender"
@@ -67,10 +64,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({ onSubmit }) => {
         errorMessage={errors.status?.message}
       />
 
-      <button
-        type="submit"
-        className="w-full p-3 mt-4 background-primary font-semibold rounded-md shadow-lg"
-      >
+      <button type="submit" className="w-full p-3 mt-4 background-primary font-semibold rounded-md shadow-lg">
         Buscar personaje
       </button>
     </form>

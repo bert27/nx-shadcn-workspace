@@ -1,7 +1,7 @@
 {
-  "name": "shell",
+  "name": "appSecondary",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/shell/src",
+  "sourceRoot": "apps/appSecondary/src",
   "projectType": "application",
   "tags": [],
   "targets": {}

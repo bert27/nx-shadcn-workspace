@@ -8,33 +8,19 @@ interface CardsProps<T> {
   renderItem: (item: T, match: string | null | undefined) => React.ReactNode;
 }
 
-export const Cards = <T,>({
-  data,
-  loading,
-  error,
-  match,
-  renderItem,
-}: CardsProps<T>) => {
+export const Cards = <T,>({ data, loading, error, match, renderItem }: CardsProps<T>) => {
   return (
     <>
       {loading && (
         <div className="flex justify-center items-center w-full h-full">
-          <div
-            className="spinner-border text-blue-500 animate-spin"
-            style={{ width: '3rem', height: '3rem' }}
-          ></div>
+          <div className="spinner-border text-blue-500 animate-spin" style={{ width: '3rem', height: '3rem' }}></div>
         </div>
       )}
       {error && <p>Error: {error}</p>}
       {data && !loading && (
-        <div
-          className="flex flex-wrap w-full justify-center p-3"
-          id="fatherMap"
-        >
+        <div className="flex flex-wrap w-full justify-center p-3" id="cards">
           {data.map((child, index) => (
-            <React.Fragment key={index}>
-              {renderItem(child, match)}
-            </React.Fragment>
+            <React.Fragment key={index}>{renderItem(child, match)}</React.Fragment>
           ))}
         </div>
       )}
