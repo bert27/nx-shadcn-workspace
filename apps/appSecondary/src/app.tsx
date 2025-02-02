@@ -1,12 +1,7 @@
-import { GlobalProvider } from './context/useGlobalContext';
 import PrincipalPage from './pages/PrincipalPage';
 
 export function App() {
-  return (
-    <GlobalProvider>
-      <PrincipalPage />
-    </GlobalProvider>
-  );
+  return <PrincipalPage />;
 }
 
 export default App;

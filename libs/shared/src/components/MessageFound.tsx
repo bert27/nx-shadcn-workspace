@@ -1,18 +1,16 @@
 import React from 'react';
+import { useGlobalContext } from '../context/useGlobalContext';
 
-interface MessageFoundProps {
-  foundCharacter: string | undefined;
-  isSearched: boolean;
-}
+export const MessageFound: React.FC = () => {
+  const { foundCharacter, isSearched } = useGlobalContext();
 
-export const MessageFound: React.FC<MessageFoundProps> = ({ foundCharacter, isSearched }) => {
   return (
     <div className="flex justify-center">
       {isSearched === false && !foundCharacter && <h2 className="text-2xl text-center text-gray-500">Busca tu personaje.</h2>}
 
       {foundCharacter && (
         <h2 className="text-2xl text-center font-semibold text-terciary">
-          ¡El personaje que coincide con tus preferencias es {foundCharacter}!
+          ¡El personaje que coincide con tus preferencias es {foundCharacter.name}!
         </h2>
       )}
 

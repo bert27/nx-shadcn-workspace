@@ -1,8 +1,10 @@
 import React from 'react';
-import RadioGroup from './RadioGroup';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { RadioGroup, useGlobalContext } from '@shared';
+import { Character } from '../models/character';
+import { endpoints } from '../../services/Service';
 
 const schema = z.object({
   gender: z.enum(['Male', 'Female'], {
@@ -16,11 +18,7 @@ const schema = z.object({
 
 export type FormData = z.infer<typeof schema>;
 
-interface CustomFormProps {
-  onSubmit: (data: FormData) => void;
-}
-
-export const CustomForm: React.FC<CustomFormProps> = ({ onSubmit }) => {
+export const CustomForm: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -28,6 +26,25 @@ export const CustomForm: React.FC<CustomFormProps> = ({ onSubmit }) => {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
+  const { cache, setFoundCharacter, setIsSearched } = useGlobalContext();
+
+  const onSubmit = (data: FormData) => {
+    const { gender, species, status } = data;
+
+    const characters: Character[] = cache[endpoints.characters]?.results || [];
+
+    const matchedCharacters = characters.filter(
+      (character) => character.gender === gender && character.species === species && character.status === status
+    );
+
+    if (matchedCharacters.length > 0) {
+      const bestMatch = matchedCharacters[0];
+      setFoundCharacter(bestMatch);
+    } else {
+      setFoundCharacter(undefined);
+    }
+    setIsSearched(true);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md mx-auto p-6 background-secondary rounded-lg shadow-lg">

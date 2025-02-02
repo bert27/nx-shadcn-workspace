@@ -1,11 +1,13 @@
 import React, { createContext, useState, ReactNode, useContext } from 'react';
-import { Character } from '../characters/models/character';
+import { Character } from '../models/Interfaces';
 
 interface GlobalContextType {
   cache: Record<string, any>;
   setCache: (url: string, data: any) => void;
   foundCharacter: Character | null | undefined;
   setFoundCharacter: (character: Character | null | undefined) => void;
+  setIsSearched: React.Dispatch<React.SetStateAction<boolean>>;
+  isSearched: boolean;
 }
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
@@ -24,6 +26,7 @@ interface GlobalProviderProps {
 const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
   const [cache, setCache] = useState<Record<string, any>>({});
   const [foundCharacter, setFoundCharacter] = useState<Character | null | undefined>(null);
+  const [isSearched, setIsSearched] = useState(false);
 
   const updateCache = (url: string, data: any) => {
     setCache((prevCache) => ({
@@ -39,6 +42,8 @@ const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
         setCache: updateCache,
         foundCharacter,
         setFoundCharacter,
+        setIsSearched,
+        isSearched,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import { GlobalProvider } from './context/useGlobalContext';
+import { GlobalProvider } from '@shared';
 import PrincipalPage from './pages/PrincipalPage';
 
 export function App() {

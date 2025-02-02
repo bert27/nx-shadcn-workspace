@@ -1,4 +1,3 @@
-import React from 'react';
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 
 interface RadioGroupProps<T extends FieldValues> {
@@ -9,7 +8,7 @@ interface RadioGroupProps<T extends FieldValues> {
   errorMessage?: string;
 }
 
-function RadioGroup<T extends FieldValues>({ label, name, options, register, errorMessage }: RadioGroupProps<T>) {
+export function RadioGroup<T extends FieldValues>({ label, name, options, register, errorMessage }: RadioGroupProps<T>) {
   return (
     <div className="mb-4">
       <label htmlFor={name as string} className="block text-lg font-medium text-left">
@@ -32,5 +31,3 @@ function RadioGroup<T extends FieldValues>({ label, name, options, register, err
     </div>
   );
 }
-
-export default RadioGroup;

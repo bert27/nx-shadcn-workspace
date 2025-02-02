@@ -2,7 +2,10 @@
   "name": "react-monorepo",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "NX_SKIP_NX_CACHE=true nx serve shell",
+    "start": "NX_SKIP_NX_CACHE=true nx serve shell"
+  },
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
