@@ -18,7 +18,7 @@ const schema = z.object({
 
 export type FormData = z.infer<typeof schema>;
 
-export const CustomForm: React.FC = () => {
+export const FormCharacter: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -88,4 +88,4 @@ export const CustomForm: React.FC = () => {
   );
 };
 
-export default CustomForm;
+export default FormCharacter;

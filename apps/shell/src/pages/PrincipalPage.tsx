@@ -1,31 +1,36 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { AppRouteInterface, IconSideNavBar, SideNavBar } from '@shared';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const AppSecondaryModule = React.lazy(() => import('@appSecondary'));
 
+const appRoutes: AppRouteInterface[] = [
+  {
+    name: 'Characters',
+    icon: <IconSideNavBar emoji="🤖" label="robot" />,
+    path: '/',
+    element: <AppSecondaryModule />,
+  },
+  {
+    name: 'Other',
+    icon: <IconSideNavBar emoji="😎" label="cool" />,
+    path: '/otra-app',
+    element: <div>Continuará</div>,
+  },
+];
+
 export function App() {
   return (
-    <div>
-      <h1 className="bienvenido-shell">Bienvenido a la Shell</h1>
-      <Router>
-        <Suspense fallback={<div>Cargando...</div>}>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home usando appSecondary</Link>
-              </li>
-              <li>
-                <Link to="/otra-app">Otra en construcción</Link>
-              </li>
-            </ul>
-          </nav>
-          <Routes>
-            <Route path="/" element={<AppSecondaryModule />} />
-            <Route path="/otra-app" element={<div>Continuara</div>} />
-          </Routes>
-        </Suspense>
-      </Router>
-    </div>
+    <Router>
+      <div style={{ display: 'flex', width: '100%', minHeight: '100vh' }}>
+        <SideNavBar routes={appRoutes} />
+        <Routes>
+          {appRoutes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
