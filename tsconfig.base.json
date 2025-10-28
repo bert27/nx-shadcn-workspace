@@ -16,7 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@shared": ["libs/shared/src/index.ts"],
-      "@appSecondary": ["apps/appSecondary/src/remote-entry.ts"]
+      "@appPrimary": ["apps/appPrimary/src/remote-entry.ts"],
+      "@appSecondary": ["apps/appSecondary/src/remote-entry.ts"],
+      "@shared/components/*": ["libs/shared/src/components/*"],
+      "@shared/utils/*": ["libs/shared/src/utils/*"],
+      "@shared/hooks/*": ["libs/shared/src/hooks/*"],
+      "@shared/lib/*": ["libs/shared/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
