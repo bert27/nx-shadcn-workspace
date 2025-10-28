@@ -1,98 +1,104 @@
-# MONOREPO React using Nx
+## Monorepo React usando Nx
 
-🤟 This monorepo is built with **React** and **Nx**, providing a modular and scalable structure. It utilizes a **shell** application that serves as the main container, allowing you to integrate multiple applications such as `appSecondary`. All applications within the shell can leverage shared components and utilities located in the `shared` library, promoting code reuse and maintainability.
+🤟 Este monorepo está construido con React y Nx, proporcionando una estructura modular y escalable. Utiliza una **aplicación shell** que actúa como contenedor principal, permitiendo integrar múltiples aplicaciones como `appSecondary`. Todas las aplicaciones dentro del shell pueden aprovechar componentes y utilidades compartidas ubicadas en la biblioteca `shared`, promoviendo la reutilización de código y un mantenimiento más sencillo.
 iconem🤯.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+[Aprende más sobre esta configuración y sus capacidades](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) o ejecuta `npx nx graph` para explorar visualmente lo que se ha creado. ¡Ahora, pongámonos al día!
 
-## Finish your CI setup
+## Completa tu configuración de CI
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/TcDYVZRzuT)
+[Haz clic aquí para completar la configuración de tu espacio de trabajo.](https://cloud.nx.app/connect/TcDYVZRzuT)
 
-## Run tasks
+---
 
-To run the dev server for your app, use:
+## Ejecutar tareas
+
+Para ejecutar el servidor de desarrollo de tu aplicación, usa:
 
 ```sh
 npx nx serve shell
 ```
 
-To create a production bundle:
+Para crear un paquete de producción:
 
 ```sh
 npx nx build shell
 ```
 
-To see all available targets to run for a project, run:
+Para ver todos los objetivos disponibles para un proyecto, ejecuta:
 
 ```sh
 npx nx show project shell
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+Estos objetivos se [infieren automáticamente](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) o se definen en los archivos `project.json` o `package.json`.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+[Más sobre la ejecución de tareas en la documentación »](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Add new projects
+## Agregar nuevos proyectos
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+Si bien podrías agregar nuevos proyectos a tu espacio de trabajo manualmente, es recomendable aprovechar los [plugins de Nx](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) y su función de [generación de código](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects).
 
-Use the plugin's generator to create new projects.
+Usa el generador del plugin para crear nuevos proyectos.
 
-To generate a new application, use:
+Para generar una nueva aplicación, usa:
 
 ```sh
 npx nx g @nx/react:app demo
 ```
 
-To generate a new library, use:
+Para generar una nueva biblioteca, usa:
 
 ```sh
 npx nx g @nx/react:lib mylib
 ```
 
-## About this Monorepo
+## Acerca de este Monorepo
 
-This monorepo is structured to maximize efficiency and maintainability by centralizing multiple applications and shared resources. Here's an overview of its components:
+Este monorepo está estructurado para maximizar la eficiencia y el mantenimiento al centralizar múltiples aplicaciones y recursos compartidos. A continuación se presenta una vista general de sus componentes:
 
-## Monorepo Structure
+## Estructura del Monorepo
 
-Shell: The primary application that acts as a container for various independent applications. It manages the layout and routing, providing a unified interface for the integrated apps.
-Apps: Multiple applications (e.g., appSecondary) that operate independently within the shell. Each app can be developed, tested, and deployed separately, allowing for modular development workflows.
-Shared: A library of shared components, utilities, and styles located in the shared folder. These shared resources can be utilized by any application within the monorepo, promoting code reuse and reducing duplication.
+**Shell:** La aplicación principal que actúa como contenedor para varias aplicaciones independientes. Gestiona el diseño y el enrutamiento, proporcionando una interfaz unificada para las aplicaciones integradas.
+**Apps:** Varias aplicaciones (por ejemplo, `appSecondary`) que funcionan de forma independiente dentro del shell. Cada aplicación puede desarrollarse, probarse y desplegarse por separado, permitiendo flujos de trabajo modulares.
+**Shared:** Una biblioteca de componentes, utilidades y estilos compartidos ubicada en la carpeta `shared`. Estos recursos pueden ser utilizados por cualquier aplicación dentro del monorepo, promoviendo la reutilización de código y reduciendo la duplicación.
 
-## Key Features
+## Características Clave
 
-Modular Architecture: By separating applications and shared resources, the monorepo facilitates a clean and organized codebase, making it easier to manage and scale.
-Efficient Code Reuse: Shared libraries enable developers to use common components and utilities across different applications, ensuring consistency and reducing the effort required to implement similar features.
-Scalable Development: The structure supports the addition of new applications and shared libraries with minimal overhead, allowing the project to grow seamlessly as requirements evolve.
-Consistent Tooling: Leveraging Nx provides powerful tools for task running, code generation, and dependency management, enhancing developer productivity and maintaining project quality.
-This setup is ideal for large projects and multifunctional teams, enabling agile development practices and fostering collaboration through a well-organized codebase.
+- **Arquitectura modular:** Al separar aplicaciones y recursos compartidos, el monorepo mantiene un código limpio y organizado, facilitando la gestión y la escalabilidad.
+- **Reutilización eficiente del código:** Las bibliotecas compartidas permiten el uso de componentes y utilidades comunes entre diferentes aplicaciones, garantizando consistencia y reduciendo el esfuerzo de implementación.
+- **Desarrollo escalable:** La estructura admite la adición de nuevas aplicaciones y bibliotecas con un esfuerzo mínimo, asegurando un crecimiento fluido a medida que el proyecto evoluciona.
+- **Herramientas consistentes:** Nx proporciona potentes herramientas para la ejecución de tareas, generación de código y gestión de dependencias, mejorando la productividad del desarrollador y manteniendo la calidad del proyecto.
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+Este tipo de configuración es ideal para proyectos grandes y equipos multifuncionales, permitiendo prácticas de desarrollo ágiles y fomentando la colaboración mediante una base de código bien organizada.
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Puedes usar `npx nx list` para obtener una lista de los plugins instalados. Luego, ejecuta `npx nx list <plugin-name>` para conocer más capacidades específicas de un plugin en particular.
+Alternativamente, [instala Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) para explorar plugins y generadores directamente en tu IDE.
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+[Más sobre los plugins de Nx »](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Explora el registro de plugins »](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Install Nx Console
+[Aprende más sobre Nx en CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+## Instalar Nx Console
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Nx Console es una extensión para editores que mejora tu experiencia de desarrollo. Te permite ejecutar tareas, generar código y mejora la autocompletación en tu IDE. Está disponible para VSCode e IntelliJ.
+
+[Instalar Nx Console »](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 ## Useful links
 
-Learn more:
+## Enlaces útiles
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Aprende más:
 
-And join the Nx community:
+- [Más sobre esta configuración del espacio de trabajo](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Nx en entornos CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Publicación de paquetes con Nx Release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Qué son los plugins de Nx](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+Únete a la comunidad de Nx:
 
 - [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Síguenos en X](https://twitter.com/nxdevtools) o [LinkedIn](https://www.linkedin.com/company/nrwl)
+- [Nuestro canal de YouTube](https://www.youtube.com/@nxdevtools)
+- [Nuestro blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
