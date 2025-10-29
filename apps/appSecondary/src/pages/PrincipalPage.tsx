@@ -5,7 +5,7 @@ import './../styles.css';
 
 export function PrincipalPage() {
   return (
-    <main className="flex flex-col items-center gap-4 min-h-screen">
+    <main className="flex flex-col items-center gap-4 min-h-screen" id="app-secondary">
       <h1 className="text-4xl font-bold text-center mb-2">Descubre tu Personaje!!</h1>
       <MessageFound />
       <div className="flex w-full flex-col md:flex-row">

@@ -15,6 +15,7 @@ interface SideNavBarProps {
 export const SideNavBar = ({ routes }: SideNavBarProps): React.ReactElement => {
   return (
     <div
+      id="side-nav"
       className="side-nav-bar"
       style={{
         background: '#05002C',
@@ -25,7 +26,7 @@ export const SideNavBar = ({ routes }: SideNavBarProps): React.ReactElement => {
     >
       {routes.map((route) => (
         <div key={route.name} style={{ padding: '0.5rem 0' }}>
-          <Link to={route.path} aria-label={route.name} title={route.name}>
+          <Link to={route.path} aria-label={route.name} title={route.name} id={`nav-${route.name.toLowerCase()}`}>
             {route.icon}
           </Link>
         </div>

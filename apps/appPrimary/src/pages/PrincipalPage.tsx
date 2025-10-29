@@ -3,7 +3,7 @@ import './../styles.css';
 
 export function PrincipalPage() {
   return (
-    <main className="flex flex-col items-center gap-4 min-h-screen">
+    <main className="flex flex-col items-center gap-4 min-h-screen" id="app-primary">
       <h1 className="text-4xl font-bold text-center mb-2">Pagina Principal</h1>
       <div className="flex w-full flex-col md:flex-row">
         <ThreeDotsMenu />

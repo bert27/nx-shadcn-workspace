@@ -4,7 +4,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "NX_SKIP_NX_CACHE=true nx serve shell",
-    "start": "NX_SKIP_NX_CACHE=true nx serve shell"
+    "start": "NX_SKIP_NX_CACHE=true nx serve shell",
+    "build": "nx build shell && nx build shared",
+    "build:libs": "nx build shared",
+    "build:shell": "nx build shell",
+    "build:shell-e2e": "nx build shell-e2e",
+    "e2e": "NX_SKIP_NX_CACHE=true nx e2e shell-e2e",
+    "lint": "nx lint",
+    "postinstall": "node ./decorate-angular-cli.js && nx postinstall"
   },
   "private": true,
   "dependencies": {
