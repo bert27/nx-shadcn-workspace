@@ -25,11 +25,7 @@ export const SideNavBar = ({ routes }: SideNavBarProps): React.ReactElement => {
     >
       {routes.map((route) => (
         <div key={route.name} style={{ padding: '0.5rem 0' }}>
-          <Link
-            to={route.path}
-            aria-label={route.name}
-            title={route.name} // tooltip
-          >
+          <Link to={route.path} aria-label={route.name} title={route.name}>
             {route.icon}
           </Link>
         </div>
